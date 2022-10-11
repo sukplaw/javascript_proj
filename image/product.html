@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>adding elements Java Script</title>
+</head>
+<style>
+    li {
+        width: 30%;
+    }
+
+    li img {
+        width: 100%;
+    }
+</style>
+<script>
+    var items = [
+        ['image/img1.jpg',79,'ยำมาม่า'],
+        ['image/img2.jpg',79,'ยำวุ้นเส้น'],
+        ['image/img3.jpg',99,'ยำไข่เยี่ยวม้า'],
+        ['image/img4.jpg',149,'ยำแซลม่อน'],
+        ['image/img5.jpg',159,'ยำทะเลรวม'],
+        ['image/img6.jpg',259,'ยำรวมมหาสมุทร'],
+        ['image/img7.jpg',79,'ยำไส้กรอก'],
+        ['image/img8.jpg',259,'ยำซุปเปอร์'],
+        ['image/img9.jpg',159,'ยำกุ้งสด'],
+        ['image/img10.jpg',59,'ไก่ย่าง'],
+    ];
+
+    function basket(){
+        var main = document.getElementById('name shoes');
+        
+        for(var i = 0;i < items.length;i++)
+        {
+
+        
+
+            var ele = document.createElement('li');
+            var pic = document.createElement('img');
+            var price = document.createElement('h1');
+            var desc = document.createElement('h2');
+            var add = document.createElement('button');
+            var typeBox = document.createElement('input');
+
+            main.appendChild(ele);
+            ele.appendChild(pic);
+            ele.appendChild(price);
+            ele.appendChild(desc); 
+            ele.appendChild(add);
+            ele.appendChild(typeBox);
+
+            pic.src = items[i][0];
+            price.innerHTML = '฿' + items[i][1];
+            desc.innerHTML = '฿' + items[i][2];
+            add.innerHTML = 'add';
+            typeBox.type = 'number';
+        }
+    }
+</script>
+
+<body>
+    <button onclick="basket()">Show!!!</button>
+    <ul id ="name shoes"></ul>
+</body>
+</html>
